@@ -1,0 +1,17 @@
+{
+  "name": "app_linkpro",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "kitbox": "^1.5.7",
+    "vite": "^8.2.1",
+    "vite-plugin-node-polyfills": "^0.28.0"
+  }
+}
