@@ -14,13 +14,12 @@ async function renderApp(wallet) {
             ${navbar}
             <button id="installBtn" class="bg-blue-300 p-3 rounded text-white">Install App</button>
         `;
-        settingPWA();
+        await settingPWA();
     }
 }
 
 async function settingPWA() {
     const installBtn = document.getElementById('installBtn');
-
     installBtn.addEventListener('click', async () => {
     if (deferredPrompt) {
         deferredPrompt.prompt();
