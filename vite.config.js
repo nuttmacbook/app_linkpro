@@ -8,9 +8,7 @@ export default defineConfig({
     build: {
         rollupOptions: {
             input: {
-                main: 'index.html',
-                matrix: 'index.html',
-                grape: 'index.html',
+                main: 'index.html'
             },
         },
     }
