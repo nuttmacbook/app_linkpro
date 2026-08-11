@@ -12,6 +12,7 @@ async function renderApp(wallet) {
         const app = document.querySelector('#app');
         app.innerHTML = /*html*/`
             ${navbar}
+            Change Something
         `;
     }
 }
