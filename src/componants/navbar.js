@@ -8,7 +8,7 @@ const navbar = /*html*/`
             </strong>
         </div>
         <div class="flex items-center gap-3 justify-end">
-            <appKit-button balance="false" style="zoom: 90%;"></appKit-button>
+            <appKit-button balance="hide" style="zoom: 90%;"></appKit-button>
         </div>
     </nav>
 `;
