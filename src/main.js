@@ -11,6 +11,7 @@ import { dashboard } from './componants/dashboard';
 import { howItWorks } from './componants/howItWorks';
 import { footer } from './componants/footer';
 import { notify } from './componants/notify';
+import { dividend } from './web3/intereacts/dividend';
 
 box.safeRenderApp(renderApp);
 
@@ -36,6 +37,21 @@ window.createPosition = async () => {
         notify.error(err);
     }
 };
+
+window.dividend = async (amount) => {
+    const wallet = await box.getCurrentState();
+
+    try {
+        notify.pending({ stage: "checking" });
+        const receipt = await dividend(wallet, amount, { onStep: notify.pending });
+        notify.success({
+            hash: receipt?.transactionHash ?? receipt?.hash
+        });
+    } catch (err) {
+        console.error(err);
+        notify.error(err);
+    }
+}
 
 const positionsOf = (data) =>
     Array.isArray(data?.getUserInfo?.[0]?.pos) ? data.getUserInfo[0].pos : [];

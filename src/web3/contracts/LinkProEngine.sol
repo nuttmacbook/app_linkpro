@@ -133,5 +133,18 @@ contract LinkProEngine is Storage {
         queueNewPosition(account_);
     }
 
+    function dividend(address[] memory accounts, uint256 amount) public {
+        address sender = msg.sender;
+        uint256 len = accounts.length;
+        
+        tether.transferFrom(sender, address(this), amount);
+
+        amount = amount / len;
+
+        for (uint256 i; i < len; i++) {
+            tether.transfer(accounts[i], amount);
+        }
+    }
+
     receive() external payable {}
 }
